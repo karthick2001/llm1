@@ -69,7 +69,7 @@ def user_input(user_question):
         return
     
     # Load the FAISS index
-    new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
+    new_db = FAISS.load_local("faiss_index", embeddings,allow_dangerous_deserialization=True)
     
     docs = new_db.similarity_search(user_question)
     
