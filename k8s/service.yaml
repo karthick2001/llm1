@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: streamlit-service
+  name: pdf-app-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
-    app: streamlit-app
+    app: pdf-app
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8501
+  - protocol: TCP
+    port: 8501
+    targetPort: 8501

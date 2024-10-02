@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pdf-app-ingress
+  namespace: default
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing # for external access
+    alb.ingress.kubernetes.io/target-type: ip
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: pdf-app-service
+                port:
+                  number: 8501
