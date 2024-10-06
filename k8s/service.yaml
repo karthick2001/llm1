@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: pdf-app-service
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: pdf-app
   ports:
   - protocol: TCP
-    port: 8501
+    port: 80
     targetPort: 8501
