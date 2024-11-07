@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: pdf-app
-        image: public.ecr.aws/u4i0c1o5/pdf_app:latest
+        image: public.ecr.aws/u4i0c1o5/pdfbot:latest
         ports:
         - containerPort: 8501
